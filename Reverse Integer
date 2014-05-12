@@ -1,0 +1,12 @@
+public class Solution {
+    public int reverse(int x) {
+        int input = Math.abs(x);
+        int result = 0;
+        while(input >= 10){
+            result = (input % 10 + result) * 10;
+            input = input / 10;
+        }
+        result += input;
+        return x > 0 ? result : -result;
+    }
+}
