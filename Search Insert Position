@@ -1,0 +1,20 @@
+public class Solution {
+    public int searchInsert(int[] A, int target) {
+        return binarySearch(A, 0, A.length-1, target);
+    }
+    public int binarySearch(int[] A, int start, int end, int target){
+        if(start == end){
+            return target<=A[start]?start:start+1;
+        }
+        int mid = (start+end)/2;
+        if(target == A[mid]){
+            return mid;
+        }else if(target < A[mid]){
+            return binarySearch(A, start, mid, target);
+        }else{
+            return binarySearch(A, mid+1, end, target);
+        }
+        
+    }
+    
+}
