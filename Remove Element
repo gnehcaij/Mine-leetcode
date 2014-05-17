@@ -1,0 +1,16 @@
+public class Solution {
+    public int removeElement(int[] A, int elem) {
+        int first = 0;
+        int last = A.length-1;
+        int tmp = 0;
+        while(first<=last){
+            if(A[first]!=elem){
+                first++;
+            }else{
+                A[first] = A[last];
+                last--;
+            }
+        }
+        return first;
+    }
+}
