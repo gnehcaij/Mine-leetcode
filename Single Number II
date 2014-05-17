@@ -1,0 +1,14 @@
+public class Solution {
+    public int singleNumber(int[] A) {
+        int low = 0;
+        int high = 0;
+        for(int item : A){
+            high |= low & item;
+            low ^= item;
+            int clear = high & low;
+            high &= ~clear;
+            low &= ~clear;
+        }
+        return low;
+    }
+}
