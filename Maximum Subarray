@@ -1,0 +1,16 @@
+public class Solution {
+    public int maxSubArray(int[] A) {
+        int result = A[0];
+        int tmp = result>0?result:0;
+        for(int i = 1;i<A.length;i++){
+            tmp += A[i];
+            if(tmp>result){
+                result = tmp;
+            }
+            if(tmp<0){
+                tmp = 0;
+            }
+        }
+        return result;
+    }
+}
